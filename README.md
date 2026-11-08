@@ -6,7 +6,7 @@ HTML・CSS・JavaScriptを使用して開発した、出席記録と集計を行
 
 ## デモサイト
 
-**[出席管理システムを開く](ここに公開URLを入力)**
+**[出席管理システムを開く](https://zhongjietangcun-debug.github.io/attendance-management-system/)**
 
 ※ 学習・デモ用のアプリケーションです。実在する生徒の個人情報は入力しないでください。
 
