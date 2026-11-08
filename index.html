@@ -1,0 +1,13 @@
+
+<!doctype html>
+<html lang="ja">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>出席管理 | Classnote</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body>
+<aside><div class="brand">◈ Classnote</div><p>教室の毎日を、ひと目で。</p><nav><a href="#daily">▦ 日別の出席管理</a><a href="#monthly">▥ 月別レポート</a><a href="#backup">↧ データ管理</a></nav><small>LOCAL WORKSPACE<br>このブラウザに保存</small></aside>
+<main><header><div><span class="eyebrow">CLASSROOM OVERVIEW</span><h1>出席ダッシュボード</h1><p>一人ひとりの記録を、日々の気づきに。</p></div><label>記録する日付<input id="date" type="date" required></label></header>
+<div id="notice" role="status" aria-live="polite"></div>
+<section class="stats" aria-label="日別集計"><article><span>登録人数</span><strong id="total">0</strong></article><article><span>出席</span><strong id="present">0</strong></article><article><span>欠席 / 遅刻</span><strong id="other">0 / 0</strong></article><article><span>出席率</span><strong id="rate">—</strong></article></section>
+<section class="panel" id="daily"><div class="section-head"><div><h2>日別の出席管理</h2><p id="dailySummary"></p></div><button id="csv" class="secondary">この日のCSV出力</button></div><div class="toolbar"><label class="search">生徒を検索<input id="search" type="search" placeholder="名前で検索…" autocomplete="off"></label><form id="addForm"><label>生徒を登録<input id="name" maxlength="100" required placeholder="生徒名"></label><button>追加</button></form></div><div class="table-wrap"><table><thead><tr><th>生徒名</th><th>出席状況</th></tr></thead><tbody id="students"></tbody></table></div><p id="empty" class="empty"></p></section>
+<section class="panel" id="monthly"><div class="section-head"><div><h2>月別レポート</h2><p>出席率 = 出席 ÷ 記録済み件数。欠席・遅刻を分母に含め、未記録は除外します。</p></div><label>集計月<input id="month" type="month" required></label></div><div class="month-overview"><div><span>月間出席率</span><strong id="monthRate">—</strong><p id="monthSummary"></p></div><div class="legend">● 出席 <span>● 欠席</span> <em>● 遅刻</em></div></div><h3>日ごとの出席率</h3><div id="chart" class="chart" role="list" aria-label="日別出席率グラフ"></div><h3>生徒ごとの月間集計</h3><p class="hint">生徒検索はこの一覧にも反映されます。全体の集計・グラフは検索で変わりません。</p><div class="table-wrap"><table><thead><tr><th>生徒名</th><th>出席</th><th>欠席</th><th>遅刻</th><th>出席率</th></tr></thead><tbody id="monthlyStudents"></tbody></table></div></section>
+<section class="panel" id="backup"><h2>データ管理</h2><p>ブラウザや保存場所を変える前にバックアップしてください。復元すると現在のデータを置き換えます。</p><div class="actions"><button id="export" class="secondary">JSONバックアップを保存</button><label class="file-button">JSONから復元<input id="import" type="file" accept=".json,application/json"></label></div></section><footer>Classnote · 外部通信なし / 自動保存 · CSVの日付が ##### の場合はExcelの列幅を広げてください。</footer></main>
+</body></html>
